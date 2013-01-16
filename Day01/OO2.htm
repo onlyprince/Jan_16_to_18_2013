@@ -64,6 +64,18 @@
                 this.setBalance(this.getBalance() - amount);
             }
         });
+        Ext.define("SavingsAccount", {
+            extend: "Account",
+            withdraw: function (amount) {
+                if ((this.getBalance() - amount) < 1000)
+                    console.log("Withdraw denied");
+                else
+                    //this.setBalance(this.getBalance() - amount);
+                    this.callParent(arguments);
+            }
+        });
+
+
 
         var acc1 = Ext.create("Account", {balance:10000,id:100});
         acc1.deposit(100);
