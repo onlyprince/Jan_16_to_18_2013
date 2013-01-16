@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="touch/resources/css/sencha-touch.css" rel="stylesheet" />
+    <script src="touch/sencha-touch-all.js"></script>
+    <script>
+        Ext.application({
+            launch: function () {
+                Ext.create("Ext.Panel", {
+                    fullscreen: true,
+                    height: 100,
+                    width: 300,
+                    items: [
+                        Ext.create("Ext.field.Text", {
+                            label: "Name", id: "nametext"
+                        }),
+                        Ext.create("Ext.Button", {
+                            text: "Submit",
+                            listeners: {
+                                tap: function () {
+                                    var name = Ext.getCmp("nametext");
+                                    alert(name.getValue());
+                                }
+                            }
+                        })
+                    ]
+                });
+
+
+
+
+                //                Ext.create("Ext.field.Checkbox", {
+                //                    fullscreen : true,
+                //                    label: "Do you want a break?",
+                //                    labelWidth: "40",
+                //                    labelWrap : true,
+                //                    width : "100",
+                //                    height : "50"
+                //                });
+                //                Ext.create("Ext.field.Text", {
+                //                    label : "Name",
+                //                    fullscreen : true
+                //                });
+                // Ext.create("Ext.Button", {
+                //              text : "Hello World",
+                //              fullscreen : true
+                // });
+
+                /* Ext.create("Ext.Label", {
+                html : "Hello World",
+                fullscreen : true
+                });
+                */
+                //alert("Hello World");
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
