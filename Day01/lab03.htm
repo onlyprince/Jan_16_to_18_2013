@@ -4,6 +4,12 @@
 <head>
     <script>
         //Your implementation goes here
+        var Ext = {
+                    application: function (obj) {
+                        if(obj["launch"] != undefined)
+                            obj.launch();
+                    }
+        };
 
         Ext.application({
             launch: function () {
