@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <script>
+        //Closures
+        
+        //a();
+        //function a() { };
+
+        //a();//ERROR
+        var a = function () { };
+
+
+        function confuse() {
+            return function () {
+                return function () {
+                    console.log("confused");
+                };
+            };
+        }
+        var fn1 = confuse();
+        var fn2 = fn1();
+        fn2();
+        //confuse()()();
+
+
+        function work(something) {
+            alert(something);
+            something();
+        }
+
+        function sleep() { console.log("Sleeping"); }
+        work(sleep);
+        work(function () { console.log("Scratching my head"); });
+
+
+
+
+        var eat = function () {
+            console.log("Eating");
+        };
+        eat();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

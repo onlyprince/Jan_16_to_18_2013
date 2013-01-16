@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <script>
+        //Function hoisting
+
+        function work() {
+            console.log("****Working****");
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        work();
+        work(2, "Days");
+        work(3, "days ", " a month");
+        work("not interested");
+        work(100);
+
+        sleep();
+        function sleep() {
+            console.log("Learning Sencha");
+        }
+
+        function eat(menu) {
+            console.log("Eating " + menu);
+        }
+        eat("Roti");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
