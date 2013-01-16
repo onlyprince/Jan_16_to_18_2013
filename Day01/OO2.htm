@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="touch/resources/css/sencha-touch.css" rel="stylesheet" />
+    <script src="touch/sencha-touch-all.js"></script>
+    <script>
+        Ext.define("Employee", {
+            config: {
+                name: ""
+            },
+            constructor: function (cfg) {
+                this.initConfig(cfg);
+            },
+            work: function () {
+                console.log("Employee: " + this.getName() + " is sleeping");
+            }
+        });
+        Ext.define("Manager", {
+            extend: "Employee",
+            config: {
+                salary: 0,
+                level: 0
+            },
+            work: function () {
+                this.callParent();
+                console.log("Manager: " + this.getName() + " with salary of " +
+                            this.getSalary() + " is snoring");
+            }
+        });
+
+        var m1 = Ext.create("Manager", { name: "Sam",salary:30000 });
+        m1.work();
+
+        Ext.define("Person", {
+            statics: {
+                count: 0,
+                getCount: function () {
+                    return this.count;
+                }
+            },
+            config: {
+                name: ""
+            },
+            constructor: function (cfg) {
+                this.initConfig(cfg);
+                this.statics().count++; //WEIRD SYNTAX
+            }
+        });
+        var p1 = Ext.create("Person");
+        var p2 = Ext.create("Person");
+        alert(Person.getCount());
+
+        Ext.define("Account", {
+            config: {
+                balance: 1000
+            },
+            constructor: function (cfg) {
+                this.initConfig(cfg);
+            },
+            deposit: function (amount) {
+                this.setBalance(this.getBalance()+amount);
+            },
+            withdraw: function (amount) {
+                this.setBalance(this.getBalance() - amount);
+            }
+        });
+
+        var acc1 = Ext.create("Account", {balance:10000,id:100});
+        acc1.deposit(100);
+        acc1.withdraw(1000);
+        console.log(acc1.getBalance());
+
+        Ext.define("Book", {
+            config: {
+                title: "",
+                pages: 0,
+                price: 0,
+                authors: [],
+                publisher: ""
+            },
+            constructor: function (cfg) {
+                this.initConfig(cfg);
+            }
+        });
+        var b1 = Ext.create("Book", {
+            title : "AJAX", pages:123
+        });
+        console.log(b1.getTitle());
+        b1.setPrice(200);
+    </script>
+<body>
+
+</body>
+</html>
