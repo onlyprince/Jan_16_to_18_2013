@@ -1,0 +1,52 @@
+Mobile browsers
+	
+	rendering engine
+	chrome(webkit) -->Sencha supports
+	safari (webkit) --> sencha
+	firefox (gecko)
+	IE (ms)
+		
+
+Mobile
+	Android
+	iOS
+	Windows Phone
+	Blackberry
+	Symbian
+	
+Mobile web applications
+
+	rich look and feel
+	support for touch events
+	orientation support
+	all devices
+	
+	mobile JS libraries
+		jQuery Mobile, Sencha Touch, Dojo mobile, jQM, Kendo UI
+
+Sencha Touch
+	one of the first
+	supports almost all devices(except windows phone)
+	rich styling
+	Modularity (MVC architecture)
+	Steep learning curve
+
+PhoneGap
+	bundles your mobile web app to native app
+	helps you access native features of a device(camera, recorder)	 
+
+Native applications
+	Android
+		Java, Android SDK, Eclipse
+		.apk file
+	iOS
+		Objective-C, Cocoa Touch, XCode
+		.ipa file
+
+	Windows Phone
+		.NET, Windows Phone SDK, Visual Studio,
+		.xap file	
+
+
+
+https://github.com/prabhu-durasoft
