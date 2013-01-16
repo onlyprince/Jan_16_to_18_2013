@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="touch/resources/css/sencha-touch.css" rel="stylesheet" />
+    <script src="touch/sencha-touch-all.js"></script>
+    <script>
+        var game = {
+            target: Math.floor(Math.random() * 100),
+            message: "",
+            attempts: 0,
+            gameOver: false,
+            reset: function () {
+                this.target = Math.floor(Math.random() * 100);
+                this.message = "";
+                this.attempts = 0;
+                this.gameOver = false;
+            },
+            play: function (guess) {
+                this.attempts++;
+                if (guess > this.target)
+                    this.message = "Aim Lower";
+                else if (guess < this.target)
+                    this.message = "Aim Higher";
+                else {
+                    this.message = "You have got it!!!";
+                    this.gameOver = true;
+                }
+            }
+        };
+        var gameOverPanel;
+        function playAgain() {
+            gameOverPanel.hide();
+            game.reset();
+            Ext.getCmp("guesstext").setValue("0");
+            Ext.getCmp("messagelabel").setHtml("");
+            Ext.getCmp("attemptslabel").setHtml("");
+        }
+        function play() {
+            var guessText = Ext.getCmp("guesstext");
+            var guess = parseInt(guessText.getValue());
+            game.play(guess);
+            Ext.getCmp("messagelabel").setHtml(game.message);
+            Ext.getCmp("attemptslabel").setHtml("Attempts: " + game.attempts);
+            guessText.select();
+            if (game.gameOver) {
+                if (gameOverPanel == undefined) {
+                    gameOverPanel = Ext.create("Ext.Panel", {
+                        width: 200, height: 200,
+                        items: [
+                            {
+                                xtype: "label", html: "Do you want to play again?"
+                            },
+                            {
+                                xtype: "button", text: "Yes", listeners: { tap: playAgain }
+                            },
+                            {
+                                xtype: "button", text: "No", listeners: { tap: function () { Ext.getCmp("guessbutton").disable(); gameOverPanel.hide(); } }
+                            }
+                        ]
+                    });
+                 }
+                gameOverPanel.showBy(Ext.getCmp("guessbutton"));
+            }
+        }
+        Ext.application({
+            launch: function () {
+                console.log(game.target);
+                Ext.create("Ext.Panel", {
+                    fullscreen: true,height : 300,width:400,
+                    items: [
+                                    {
+                                        xtype: "textfield",
+                                        label: "Enter your guess",
+                                        id: "guesstext"
+                                    },
+                                    {
+                                        xtype: "toolbar",
+                                        ui : "light",
+                                        docked : "bottom",
+                                        items : [
+                                                    {
+                                                        xtype: "button",
+                                                        text: "Guess",
+                                                        ui : "confirm",
+                                                        id: "guessbutton",
+                                                        listeners: {
+                                                            tap: play
+                                                        }
+                                                    },
+                                                    {
+                                                        xtype: "label",
+                                                        id: "messagelabel"
+                                                    },
+                                                    {
+                                                        xtype: "label",
+                                                        id: "attemptslabel"
+                                                    }
+                                        ]
+                                    }
+                           ]
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
