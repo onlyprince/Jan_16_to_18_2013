@@ -8,6 +8,7 @@
         function getInfo() {
             Ext.Ajax.on('beforerequest', function () { console.log("beforeee");Ext.getCmp("loadimage").show(); }, this);
             Ext.Ajax.on('requestcomplete', function () { console.log("after"); Ext.getCmp("loadimage").hide(); }, this);
+
             Ext.Ajax.request({
                 url: "ajaxex1.ashx",
                 params: {
