@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="touch/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+    <script src="touch/sencha-touch-all.js"></script>
+    <script>
+        function getInfo() {
+            Ext.Ajax.request({
+                url: "ajaxex1.ashx",
+                params: {
+                    country: Ext.getCmp("countrytext").getValue()
+                },
+                failure: function (xhr) {
+                    alert("Error: " + xhr.statusText);
+                },
+                success: function (xhr) {
+                    console.log(xhr);
+                    var response = xhr.responseText;
+                    var countryObj = Ext.JSON.decode(response);
+                    Ext.getCmp("capitallabel").setHtml(countryObj.capital +
+                                    ", " + 
+                                    countryObj.continent);
+                }
+            });
+        }
+        Ext.application({
+            launch: function () {
+                Ext.create("Ext.Panel", {
+                    fullscreen: true,
+                    height: 300,
+                    items: [
+                                {
+                                    xtype: "textfield",
+                                    id: "countrytext",
+                                    label: "Country"
+                                },
+                                {
+                                    xtype: "button",
+                                    text: "Get Info",
+                                    listeners: {
+                                        tap: getInfo
+                                    }
+                                },
+                                {
+                                    xtype : "label",
+                                    id : "capitallabel"
+                                }
+                    ]
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
