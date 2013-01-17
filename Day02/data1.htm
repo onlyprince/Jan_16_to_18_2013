@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="touch/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+    <script src="touch/sencha-touch-all.js"></script>
+    <script>
+        Ext.define("Country", {
+            extend: "Ext.data.Model",
+            config: {
+                fields : ["name","capital","population"]
+            }
+        });
+        var countryStore = Ext.create("Ext.data.Store", {
+            model: "Country",
+            autoLoad : true,    
+            proxy: {
+                type: "ajax",
+                url: "quest.txt",
+                reader: {
+                    type : "json",
+                    rootProperty : "countriesInAsia"
+                }
+            }
+        });
+        Ext.application({
+            launch: function () {
+                Ext.create('Ext.List', {
+                    fullscreen: true,
+                    itemTpl: '<b>{name}</b>, <i>{capital}</i>',
+                    listeners: {
+                        dummyitemtap: function (a, b, c, record) {
+                            alert(record.get("population"));
+                        },
+                        itemdoubletap: function (a, index) {
+                            index++;
+                            if (countryStore.getCount() == index)
+                                index = 0;
+                            var nextRecord = countryStore.getAt(index);
+                            console.log(nextRecord.get("name") + ", " + nextRecord.get("capital"));
+                        }
+                    },
+                    store: countryStore
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
