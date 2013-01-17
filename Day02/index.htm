@@ -6,6 +6,8 @@
     <script src="touch/sencha-touch-all.js"></script>
     <script>
         function getInfo() {
+            Ext.Ajax.on('beforerequest', function () { console.log("beforeee");Ext.getCmp("loadimage").show(); }, this);
+            Ext.Ajax.on('requestcomplete', function () { console.log("after"); Ext.getCmp("loadimage").hide(); }, this);
             Ext.Ajax.request({
                 url: "ajaxex1.ashx",
                 params: {
@@ -19,7 +21,7 @@
                     var response = xhr.responseText;
                     var countryObj = Ext.JSON.decode(response);
                     Ext.getCmp("capitallabel").setHtml(countryObj.capital +
-                                    ", " + 
+                                    ", " +
                                     countryObj.continent);
                 }
             });
@@ -43,8 +45,16 @@
                                     }
                                 },
                                 {
-                                    xtype : "label",
-                                    id : "capitallabel"
+                                    xtype: "label",
+                                    id: "capitallabel"
+                                },
+                                {
+                                    xtype: "image",
+                                    id : "loadimage",
+                                    src: 'http://www.sencha.com/assets/images/sencha-avatar-64x64.png',
+                                    height: 44,
+                                    width: 44,
+                                    hidden : true
                                 }
                     ]
                 });

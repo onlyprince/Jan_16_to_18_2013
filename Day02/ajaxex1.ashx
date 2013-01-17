@@ -6,6 +6,7 @@ using System.Web;
 public class ajaxex1 : IHttpHandler {
     //{"capital":"New Delhi","continent":"Asia"}
     public void ProcessRequest (HttpContext context) {
+        System.Threading.Thread.Sleep(3000);
         String country = context.Request["country"];
         if ("India" == country)
             context.Response.Write("{\"capital\":\"New Delhi\",\"continent\":\"Asia\"}");
