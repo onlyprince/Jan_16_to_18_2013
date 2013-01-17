@@ -23,25 +23,53 @@
                 }
             }
         });
+        function add() {
+            var countryText = Ext.getCmp("countrytext").getValue();
+            var capitalText = Ext.getCmp("capitaltext").getValue();
+            var countryObj = Ext.create("Country", { name: countryText, capital: capitalText });
+            countryStore.add(countryObj);
+            // countryStore.add({name:countryText,capital:capitalText});    
+        }
         Ext.application({
             launch: function () {
-                Ext.create('Ext.List', {
+                Ext.create("Ext.Panel", {
                     fullscreen: true,
-                    itemTpl: '<b>{name}</b>, <i>{capital}</i>',
-                    listeners: {
-                        dummyitemtap: function (a, b, c, record) {
-                            alert(record.get("population"));
-                        },
-                        itemdoubletap: function (a, index) {
-                            index++;
-                            if (countryStore.getCount() == index)
-                                index = 0;
-                            var nextRecord = countryStore.getAt(index);
-                            console.log(nextRecord.get("name") + ", " + nextRecord.get("capital"));
-                        }
-                    },
-                    store: countryStore
+                    items: [
+                             {
+                                 xtype: "textfield", id: "countrytext", label: "Country"
+                             },
+                             {
+                                 xtype: "textfield", id: "capitaltext", label: "Capital"
+                             },
+                             {
+                                 xtype: "button", text: "Add", listeners: { tap: add }
+                             },
+                             {
+                                xtype: "list",
+                                height : 400,width:300,
+                                itemTpl: '<b>{name}</b>, <i>{capital}</i>',
+                                store: countryStore
+                             }
+                    ]
                 });
+
+//                Ext.create('Ext.List', {
+//                    fullscreen: true,
+//                    itemTpl: '<b>{name}</b>, <i>{capital}</i>',
+//                    listeners: {
+//                        dummyitemtap: function (a, b, c, record) {
+//                            alert(record.get("population"));
+//                        },
+//                        itemdoubletap: function (a, index) {
+//                            index++;
+//                            if (countryStore.getCount() == index)
+//                                index = 0;
+//                            var nextRecord = countryStore.getAt(index);
+//                            console.log(nextRecord.get("name") + ", " + nextRecord.get("capital"));
+//                        }
+//                    },
+//                    store: countryStore
+//                });
             }
         });
     </script>
