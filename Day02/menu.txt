@@ -1,0 +1,16 @@
+﻿{
+	"menu" : [
+				{"name":"Food","fooditems" : [
+					{"name":"Veg Samosa","price":120},
+					{"name":"Rava Upma","price":170},
+					{"name":"Parantha","price":150},
+					{"name":"Veg Sandwich","price":160}
+				
+				]},
+				{"name":"Beverages", "fooditems" : [
+						{"name":"Mineral Water","price":40},
+						{"name":"Nimbu Pani","price":50},
+						{"name":"Juice","price":60}
+				]}
+			]
+}

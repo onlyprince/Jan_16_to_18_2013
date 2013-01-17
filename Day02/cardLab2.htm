@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="touch/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+    <script src="touch/sencha-touch-all.js"></script>
+    <script>
+        Ext.define("MenuItem", {
+            extend: "Ext.data.Model",
+            config: {
+                fields: [
+                    "name","price"
+                ]
+            }
+        });
+        Ext.define("Menu", {
+            extend: "Ext.data.Model",
+            config: {
+                fields: [
+                    "name"
+                ],
+                hasMany: [
+                    { name: "fooditems", model: "MenuItem" }
+                ]
+            }
+        });
+
+        var menuStore = Ext.create("Ext.data.Store", {
+            model: "Menu",
+            autoLoad: true,
+            proxy: {
+                url: "menu.txt",
+                type: "ajax",
+                reader: {
+                    type : "json",
+                    rootProperty : "menu"
+                }
+            }
+
+        });
+
+        Ext.define("HomePanel", {
+            extend: "Ext.Panel",
+            xtype: "homepanel",
+            config: {
+                layout: {
+                    type: "vbox", pack: "center", align: "center"
+                },
+                defaults: {
+                    xtype: "image", height: 100, width: 100, margin: "5 5 5 5"
+                },
+                items: [
+                            {
+                                src: "Menu-fly.png"
+                            },
+                            {
+                                src: "Menu-explore.png",
+                                listeners: {
+                                    tap: function () {
+                                        Ext.Viewport.setActiveItem({ xtype: "explorepanel", id: "explorepanel" });
+                                        //Ext.getCmp("mainpanel").setActiveItem({xtype:"explorepanel",id:"explorepanel"});
+                                    }
+                                }
+                            }
+                       ]
+            }
+        });
+
+        Ext.define("FoodItemPanel", {
+            extend: "Ext.Panel",
+            xtype: "fooditempanel",
+            config: {
+                layout: {
+                    type: "hbox", pack: "center", align: "center"
+                },
+                items: [
+                       {
+                           xtype: "list",
+                            id : "fooditemlist",
+                            height: 100,
+                            width: 500,
+                            store: null
+                       }
+                ]
+            }
+        });
+
+
+        Ext.define("InFlightMenuPanel", {
+            extend: "Ext.Panel",
+            xtype: "inflightmenupanel",
+            config: {
+                layout: {
+                    type: "hbox", pack: "center", align: "center"
+                },
+                items: [
+
+                    {
+                        xtype: "list",
+                        id: "inflightmenulist",
+                        height: 100,
+                        width: 500,
+                        store: menuStore,
+                        itemTpl: "{name}",
+                        listeners: {
+                            itemtap: function (a, b, c, record) {
+                                if (Ext.getCmp("fooditempanel") == undefined)
+                                    Ext.getCmp("mainpanel").setActiveItem({ xtype: "fooditempanel", id: "fooditempanel" });
+                                else
+                                    Ext.getCmp("mainpanel").setActiveItem(Ext.getCmp("fooditempanel"));
+
+                                console.log(record.fooditems().getCount());
+                                Ext.getCmp("fooditemlist").setStore(record.fooditems());
+                            }
+                        }
+                    }
+
+                ]
+            }
+        });
+
+
+        Ext.define("ExplorePanel", {
+            extend: "Ext.Panel",
+            xtype: "explorepanel",
+            config: {
+                layout: {
+                    type: "hbox", pack: "center", align: "center"
+                },
+                items: [
+                            {
+                                xtype: "list",
+                                height: 140, width: 700,
+                                itemTpl: "{name}",
+                                listeners: {
+                                    itemtap: function (a, index) {
+                                        if (index == 1) {
+                                            if (Ext.getCmp("inflightmenupanel") == undefined)
+                                                Ext.Viewport.setActiveItem({ xtype: "inflightmenupanel", id: "inflightmenupanel" });
+                                            //Ext.getCmp("mainpanel").setActiveItem({ xtype: "inflightmenupanel", id: "inflightmenupanel" });
+                                            else
+                                                Ext.Viewport.setActiveItem(Ext.getCmp("inflightmenupanel"));
+                                            // Ext.getCmp("mainpanel").setActiveItem(Ext.getCmp("inflightmenupanel"));
+                                        }
+                                    }
+                                },
+                                data: [
+                                            { name: "Flight Schedule" },
+                                            { name: "In-flight Menu" },
+                                            { name: "Contact Us" }
+                                ]
+                            },
+                            {
+                                xtype: "toolbar",
+                                docked: "bottom",
+                                items: [
+                                    {
+                                        xtype: "button",
+                                        ui: "back",
+                                        text: "Back"
+                                    },
+                                    {
+                                        xtype: "spacer"
+                                    },
+                                    {
+                                        xtype: "button",
+                                        text: "Home"
+                                    }
+                                ]
+                            }
+                       ]
+            }
+        });
+
+        Ext.application({
+            launch: function () {
+                //Viewport is a panel
+                //with layout "card"
+                //with fullscreen:true
+
+                Ext.Viewport.add({
+                    xtype: "homepanel", id: "homepanel"
+                });
+
+                //Ext.Viewport.add(Ext.create("HomePanel",{id:"homepanel"}));
+
+
+                /* Ext.create("Ext.Panel", {
+                fullscreen: true,
+                id : "mainpanel",
+                layout: "card",
+                activeItem : 0,
+                items: [
+                { xtype: "homepanel", id:"homepanel" }
+                ]
+                });*/
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
