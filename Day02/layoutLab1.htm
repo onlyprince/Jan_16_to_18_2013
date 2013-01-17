@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="touch/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+    <script src="touch/sencha-touch-all.js"></script>
+    <script>
+        Ext.define("MyPanel2", {
+            extend: "Ext.Panel",
+            xtype: "mypanel2",
+            config: {
+                layout: {
+                    type: "hbox", pack: "center", align: "center"
+                },
+                defaults: {
+                    xtype: "button", height: 100, width: 100, margin: "5 2 2 2"
+                },
+                items: [
+                          { text: "D" },
+                          { text: "E" },
+                          { text: "F" }
+                       ]
+            }
+        });
+
+        Ext.define("MyPanel1", {
+            extend: "Ext.Panel",
+            xtype : "mypanel1",
+            config: {
+                layout: {
+                    type : "hbox",pack:"center",align:"center"
+                },
+                defaults: {
+                    xtype: "button", height: 100, width: 100, margin: "5 2 2 2"
+                },
+                items: [
+                          { text : "A" },
+                          { text : "B" },
+                          { text : "C" }
+                       ]
+            }
+        });
+
+        Ext.application({
+            launch: function () {
+                Ext.create("Ext.Panel", {
+                    fullscreen: true,
+                    layout: {
+                        type: "vbox",
+                        pack: "center",
+                        align: "center"
+                    },
+                    items: [
+                              { xtype: "mypanel1" },
+                              { xtype: "mypanel2" }
+                           ]
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
