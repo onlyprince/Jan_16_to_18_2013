@@ -1,0 +1,58 @@
+﻿<!DOCTYPE>
+
+<html>
+<head>
+    <link href="touch/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" /> 
+    <script src="touch/sencha-touch-all.js" type="text/javascript"></script>
+    <script>
+        var chartStore = Ext.create("Ext.data.Store", {
+            fields: ['country', 'states'],
+            data: [
+                    { 'country': 'India', 'states': 33 },
+                    { 'country': 'USA', 'states': 56 },
+                    { 'country': 'UK', 'states': 24 },
+                    { 'country': 'Spain', 'states': 17 },
+                    { 'country': 'France', 'states': 28 }
+                ]
+        });
+        Ext.application({
+            launch: function () {
+                var chart = Ext.create("Ext.chart.Chart",{
+                    store: chartStore,
+                    axes: [
+                    {
+                        type: 'numeric',
+                        position: 'left',
+                        title: {
+                            text: 'Number of states',
+                            fontSize: 15
+                        },
+                        fields: 'states'
+                    }, {
+                        type: 'category',
+                        position: 'bottom',
+                        title: {
+                            text: 'Country',
+                            fontSize: 15
+                        },
+                        fields: 'country'
+                    }],
+                    series: [{
+                        type: 'bar',
+                        xField: 'country',
+                        yField: 'states',
+                        style: {
+                            fill: 'blue'
+                        }
+                    }]
+                });
+                Ext.Viewport.setLayout('fit');
+                Ext.Viewport.add(chart);
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

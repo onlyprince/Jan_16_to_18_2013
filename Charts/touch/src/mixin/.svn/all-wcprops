@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/mixin
+END
+Mixin.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/mixin/Mixin.js
+END
+Observable.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/mixin/Observable.js
+END
+Filterable.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/mixin/Filterable.js
+END
+Templatable.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/mixin/Templatable.js
+END
+Traversable.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/mixin/Traversable.js
+END
+Sortable.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/mixin/Sortable.js
+END
+Identifiable.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/mixin/Identifiable.js
+END
+Bindable.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/mixin/Bindable.js
+END
+Selectable.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/mixin/Selectable.js
+END

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer
+END
+SingleTouch.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/SingleTouch.js
+END
+Tap.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/Tap.js
+END
+Recognizer.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/Recognizer.js
+END
+Swipe.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/Swipe.js
+END
+LongPress.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/LongPress.js
+END
+Drag.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/Drag.js
+END
+MultiTouch.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/MultiTouch.js
+END
+Rotate.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/Rotate.js
+END
+DoubleTap.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/DoubleTap.js
+END
+HorizontalSwipe.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/HorizontalSwipe.js
+END
+Pinch.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/Pinch.js
+END
+VerticalSwipe.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/VerticalSwipe.js
+END
+Touch.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/event/recognizer/Touch.js
+END

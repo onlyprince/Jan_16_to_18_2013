@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data
+END
+Types.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/Types.js
+END
+NodeInterface.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/NodeInterface.js
+END
+Errors.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/Errors.js
+END
+SortTypes.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/SortTypes.js
+END
+TreeStore.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/TreeStore.js
+END
+Validations.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/Validations.js
+END
+Batch.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/Batch.js
+END
+Field.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/Field.js
+END
+JsonStore.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/JsonStore.js
+END
+DirectStore.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/DirectStore.js
+END
+StoreManager.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/StoreManager.js
+END
+Request.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/Request.js
+END
+Error.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/Error.js
+END
+JsonP.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/JsonP.js
+END
+ResultSet.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/ResultSet.js
+END
+ModelManager.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/ModelManager.js
+END
+ArrayStore.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/ArrayStore.js
+END
+Store.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/Store.js
+END
+Connection.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/Connection.js
+END
+Operation.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/Operation.js
+END
+Model.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/Model.js
+END
+NodeStore.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/happco/!svn/ver/694/Xcode/www/touch/src/data/NodeStore.js
+END
