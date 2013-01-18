@@ -5,9 +5,16 @@
             settingsButton: "homepanel titlebar button",
             homeButton: "settingspanel titlebar button",
             settingsPanel: "#quest-settingspanel",
-            homePanel: "#quest-homepanel"
+            homePanel: "#quest-homepanel",
+            countryList: "homepanel list"
         },
         control: {
+            countryList: {
+                itemtap: "countryListItemTapped"
+            },
+            homePanel: {
+                initialize: "homePanelInitialized"
+            },
             settingsButton: {
                 tap: "settingsButtonTapped"
             },
@@ -15,6 +22,13 @@
                 tap: "homeButtonTapped"
             }
         }
+    },
+    countryListItemTapped: function (a, b, c, record) {
+        alert(record.get("population"));
+    },
+    homePanelInitialized: function () {
+        var store = Ext.getStore("CountryStore");
+        store.load();
     },
     homeButtonTapped: function () {
         Ext.Viewport.setActiveItem(this.getHomePanel());

@@ -13,7 +13,8 @@
         }
     },
     loginButtonTapped: function () {
-        Ext.Viewport.setActiveItem({xtype:"homepanel",id:"quest-homepanel"});
+        
+        Ext.Viewport.setActiveItem({ xtype: "homepanel", id: "quest-homepanel" });
 
         //        alert(this.getUserName().getValue() + ", " + 
         //            this.getPassword().getValue());

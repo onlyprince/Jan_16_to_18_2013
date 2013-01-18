@@ -1,0 +1,9 @@
+﻿{
+	"countriesInAsia" : [
+							{"name":"India","capital":"New Delhi","population":3249789},
+							{"name":"China","capital":"Beijing","population":324323243},
+							{"name":"Japan","capital":"Tokyo","population":888667},
+							{"name":"SriLanka","capital":"Colombo","population":32434}
+						]
+
+}
