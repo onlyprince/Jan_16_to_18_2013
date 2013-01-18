@@ -3,8 +3,8 @@
     config: {
         refs: {
             loginButton: "loginpanel button[id=quest-loginbutton]",
-            userName : "loginpanel textfield[label=User name]",
-            password : "#quest-passwordtext"
+            userName: "loginpanel textfield[label=User name]",
+            password: "#quest-passwordtext"
         },
         control: {
             loginButton: {
@@ -13,7 +13,10 @@
         }
     },
     loginButtonTapped: function () {
-        alert(this.getUserName().getValue() + ", " + 
-            this.getPassword().getValue());
+        Ext.Viewport.setActiveItem({xtype:"homepanel",id:"quest-homepanel"});
+
+        //        alert(this.getUserName().getValue() + ", " + 
+        //            this.getPassword().getValue());
+
     }
 });

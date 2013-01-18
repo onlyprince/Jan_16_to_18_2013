@@ -1,8 +1,8 @@
 ﻿Ext.application({
     name: "Quest", //root namespace name
     appFolder: "app", //default
-    controllers: ["LoginController"],
-    views: ["LoginPanel"],
+    controllers: ["LoginController","HomeController"],
+    views: ["LoginPanel","HomePanel","SettingsPanel"],
     models: [],
     stores: [],
     profiles: [],
