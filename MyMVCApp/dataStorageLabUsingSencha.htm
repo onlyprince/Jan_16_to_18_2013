@@ -1,0 +1,96 @@
+﻿<!DOCTYPE>
+
+<html>
+<head>
+    <link href="touch/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+    <script src="touch/sencha-touch-all.js"></script>
+    <script>
+        Ext.define("User", {
+            extend: "Ext.data.Model",
+            config: {
+                fields: [
+                    "id","userName","password"
+                ],
+                proxy: {
+                    type : "localstorage",
+                    id : "id"
+                }
+            }
+            
+
+        });
+        var userStore = Ext.create("Ext.data.Store", {
+            model: "User"
+        });
+
+
+
+        Ext.define("HomePanel", {
+            extend: "Ext.Panel",
+            xtype: "homepanel",
+            config: {
+                items: [
+                    {xtype:"titlebar",title:"Welcome"}
+                ]
+            }
+        });
+
+        Ext.define("LoginPanel", {
+            extend: "Ext.Panel",
+            xtype: "loginpanel",
+            config: {
+                items: [
+                    {
+                        xtype: "textfield",
+                        label: "User name",
+                        id: "usernametext"
+                    },
+                    {
+                        xtype: "passwordfield",
+                        label: "Password",
+                        id: "passwordtext"
+                    },
+                    {
+                        xtype: "checkboxfield",
+                        label: "Remember me",
+                        id: "remembermechk"
+                    },
+                    {
+                        xtype: "button",
+                        text: "Login",
+                        listeners: {
+                            tap : login
+                        }
+                    }
+                ]
+            }
+            });
+            
+            function login(src) {
+                var userName = Ext.getCmp("usernametext").getValue();
+                var password = src.up("panel").down("textfield[id=passwordtext]").getValue();
+                var rememberMe = src.up("panel").down("checkboxfield").isChecked();
+                if (rememberMe) {
+                    var user = Ext.create("User", { id: "101", userName: userName, password: password });
+                    user.save();
+                }
+                Ext.Viewport.setActiveItem({xtype:"homepanel"});
+            }
+            Ext.application({
+                launch: function () {
+                    User.load("101", {
+                        success: function (record) {
+                                Ext.Viewport.add({ xtype: "homepanel" });
+                        },
+                        failure: function () {
+                            Ext.Viewport.add({ xtype: "loginpanel" });
+                        }
+                    });
+                }
+            });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
