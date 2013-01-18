@@ -1,0 +1,26 @@
+﻿<!DOCTYPE>
+
+<html>
+<head>
+    <script>
+        //getItem,setItem,removeItem
+        if (localStorage.getItem("welcome") == undefined) {
+            localStorage.setItem("welcome", "Welcome to Gurgaon");
+            alert("Just created welcome in localStorage");
+        }
+        else
+            alert("Welcome is available in localStorage");
+
+        if (sessionStorage.getItem("welcome") == undefined) {
+            sessionStorage.setItem("welcome", "Welcome to Quest");
+            alert("Just created welcome in sessionStorage");
+        }
+        else
+            alert("Welcome is available in sessionStorage");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
